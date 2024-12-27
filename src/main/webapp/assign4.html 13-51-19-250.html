@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Overview</h1>
+<p>This application has four web services: assign4, topsis, entropy and critic web services</p>
+<h2>assign 4 web service</h2>
+<table style="width:100%">
+  <tr>
+    <td>Method and URI</td>
+    <td>Functionality</td>
+  </tr>
+  <tr>
+    <td>GET | http://localhost/assign4/{filename}</td>
+    <td>parses JSON data file and inserts the decision matrix into a database (e.g., MySQL) that is stored
+on a remote web location such as GCP Cloud SQL. This files becomes then the default data file to be used for the below functionalities</td>
+  </tr>
+  <tr>
+  	<td>POST | http://localhost/assign4/add</td>
+  	<td>inserts a record into decision matrix stored in a database (e.g. MySQL)</td>
+  </tr>
+    <tr>
+  	<td>PUT | http://localhost/assign4/update/{alternative_name}</td>
+  	<td>updates a record in decision matrix stored in a database (e.g. MySQL);</td>
+  </tr>
+    <tr>
+  	<td>DELETE | http://localhost/assign4/delete/{alternative_name}</td>
+  	<td>deletes a record in decision matrix stored in the database (e.g., MySQL)</td>
+  </tr>
+    <tr>
+  	<td>DELETE | http://localhost/assign4/delete</td>
+  	<td>deletes all records in decision matrix stored in the database (e.g., MySQL)</td>
+  </tr>
+  <tr>
+  	<td>GET | http://localhost/assign4/process</td>
+  	<td>returns the results in JSON format containing: 1. TOPSIS with Entropy: alternative names, rank and performance scores, 2. TOPSIS with CRITIC: alternative names, rank and performance scores, 3. Correlation coefficient comparing the performance scores of TOPSIS with Entropy and
+TOPSIS with CRITIC, respectively</td>
+  </tr>
+    <tr>
+  	<td>GET | http://localhost/assign4/process/entropy</td>
+  	<td>eturns the results in JSON format containing the alternative names, rank and performance scores after computing TOPSIS using entropy weight estimation</td>
+  </tr>
+    <tr>
+  	<td>GET | http://localhost/assign4/process/critic</td>
+  	<td>returns the results in JSON format containing the alternative names, rank and performance scores after computing TOPSIS using critic weight estimation</td>
+  </tr>
+    <tr>
+  	<td>GET | http://localhost/assign4/process/correlation</td>
+  	<td>returns the results in JSON format containing the correlation coefficient comparing the performance scores of TOPSIS with entropy and TOPSIS with CRITIC methods, respectively.</td>
+  </tr>
+</table>
+<h2>entropy web service</h2>
+<table style="width:100%">
+  <tr>
+    <td>Method and URI</td>
+    <td>Functionality</td>
+  </tr>
+  <tr>
+    <td>GET | http://localhost/assign4/entropy</td>
+    <td>computes the weights for all of the criterion using the entropy method and returns in JSON
+format the name of each attribute and computed weights testing)</td>
+  </tr>
+</table>
+<h2>critic web service</h2>
+<table style="width:100%">
+  <tr>
+    <td>Method and URI</td>
+    <td>Functionality</td>
+  </tr>
+  <tr>
+    <td>GET | http://localhost/assign4/critic</td>
+    <td>computes the weights for all of the criterion using the critic method and returns in JSON format
+the name of each attribute and computed weights testing)</td>
+  </tr>
+</table>
+<h2>topsis web service</h2>
+<table style="width:100%">
+  <tr>
+    <td>Method and URI</td>
+    <td>Functionality</td>
+  </tr>
+  <tr>
+    <td>GET | http://localhost/assign4/topsis</td>
+    <td>computes the decision matrix using TOPSIS with using (a) entropy and (b) critic weight estimation. 
+    This service returns the results in JSON format containing: 1. TOPSIS with Entropy: alternative names, rank and performance scores 
+    2. TOPSIS with CRITIC: alternative names, rank and performance scores 
+    3. Correlation coefficient comparing the performance scores of TOPSIS with Entropy and TOPSIS with CRITIC, respectively</td>
+  </tr>
+  <tr>
+  	<td>GET | http://localhost/assign4/topsis/entropy</td>
+  	<td>computes the decision matrix using TOPSIS with using the entropy weight estimation method. This service returns the results in JSON format containing the alternative names, rank and performance scores</td>
+  </tr>
+    <tr>
+  	<td>GET | http://localhost/assign4/topsis/critic</td>
+  	<td>computes the decision matrix using TOPSIS with using the critic weight estimation method. This service returns the results in JSON format containing the alternative names, rank and performance scores</td>
+  </tr>
+    <tr>
+  	<td>GET | http://localhost/assign4/topsis/correlaton</td>
+  	<td>computes the correlation coefficient between TOPSIS using entropy method and TOPSIS using the critic method and returns the results in JSON format.</td>
+  </tr>
+</table>
+</body>
+</html>
