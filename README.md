@@ -14,7 +14,7 @@ This project implements a RESTful API for a TOPSIS-based multi-criteria decision
 - **Comprehensive API Endpoints**:
   - Endpoints to manage decision matrices and compute results.
 - **Remote Database Integration**:
-  - The decision matrix is stored in a MySQL database hosted on a cloud service (e.g., GCP Cloud SQL).
+  - The decision matrix is stored in a MySQL database hosted on GCP Cloud SQL.
 - **JSON Input/Output**:
   - Input data is provided in JSON format, and all results are returned in JSON format.
 - **Dynamic Web Form**:
