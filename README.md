@@ -30,28 +30,6 @@ This project implements a RESTful API for a TOPSIS-based multi-criteria decision
   - JSON parsing library (e.g., Jackson or Gson)
   - JDBC for database connectivity
 
-## API Endpoints
-
-### Decision Matrix Management
-- `GET /assign4/{filename}`: Parse a JSON file and store the decision matrix in the database.
-- `POST /assign4/add`: Add a new record to the decision matrix (data from HTTP headers).
-- `PUT /assign4/update/{alternative_name}`: Update an existing record in the decision matrix.
-- `DELETE /assign4/delete/{alternative_name}`: Delete a specific record.
-- `DELETE /assign4/delete`: Clear all records in the decision matrix.
-
-### Weight Computation
-- `GET /assign4/entropy`: Compute attribute weights using the Shannon Entropy method.
-- `GET /assign4/critic`: Compute attribute weights using the CRITIC method.
-
-### TOPSIS Computation
-- `GET /assign4/topsis`: Perform TOPSIS analysis with entropy and CRITIC weights.
-- `GET /assign4/topsis/entropy`: Perform TOPSIS analysis using entropy weights.
-- `GET /assign4/topsis/critic`: Perform TOPSIS analysis using CRITIC weights.
-- `GET /assign4/topsis/correlation`: Compute the correlation coefficient between the TOPSIS results.
-
-### Process Results
-- `GET /assign4/process`: Retrieve both entropy- and CRITIC-based TOPSIS rankings and correlation coefficient.
-
 ## How to Run
 
 1. **Setup Database**:
