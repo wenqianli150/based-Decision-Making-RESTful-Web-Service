@@ -30,17 +30,3 @@ This project implements a RESTful API for a TOPSIS-based multi-criteria decision
   - JSON parsing library (e.g., Jackson or Gson)
   - JDBC for database connectivity
 
-## How to Run
-
-1. **Setup Database**:
-   - Create a MySQL database on a cloud platform (e.g., GCP Cloud SQL).
-   - Configure the database credentials in the application's configuration file.
-   - Import the provided SQL schema to set up the necessary tables.
-
-2. **Build and Deploy**:
-   - Build the project using your preferred IDE or Maven.
-   - Deploy the WAR file to an Apache Tomcat server.
-
-3. **Access the API**:
-   - Use Postman or any REST client to interact with the API.
-   - Test endpoints with small, medium, and large decision matrices as described.
